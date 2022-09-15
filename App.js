@@ -57,8 +57,8 @@ function App() {
         },
         headers: { 'Content-Type': 'application/json' }
       });
-      const data = response.statusText;
-      if (data === 'OK') {
+      const data = response.status;
+      if (data === 200) {
         setBeginingOfTheChunk(endOfTheChunk);
         setEndOfTheChunk(endOfTheChunk + chunkSize);
         if (counter === chunkCount) {
@@ -90,8 +90,8 @@ function App() {
       data: formData,
     });
 
-    const data = response.data;
-    if (data.isSuccess) {
+    const data = response.status;
+    if (data === 200) {
       setProgress(100);
     }
   }
