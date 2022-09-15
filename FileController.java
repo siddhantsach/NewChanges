@@ -25,7 +25,7 @@ public class FileController {
 	private Object chunk = new Object();
 
 	@PostMapping
-	public ResponseEntity uploadFile(@RequestParam("chunk") byte[] chunk, @RequestParam("id") String id,@RequestParam("fileName") String fileName) {
+	public ResponseEntity uploadFile(@RequestParam("chunk") Object chunk, @RequestParam("id") String id,@RequestParam("fileName") String fileName) {
 		System.out.println(id);
 
 		try {
